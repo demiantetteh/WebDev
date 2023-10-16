@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+    <!-- HTML COMMENTS -->
+
+    <!-- html must always begin with <!DOCTYPE html> -->
+    <!-- with <html> on the next line -->
+    <!-- <head> = has nothing to do with the browser output
+                  It has things like page title, links to CSS
+                  files, metadata etc.-->
+    <!-- <title>= Title of the page that you see on the tab -->
+    <!-- <body> = actual markup of what's shown in the browser -->
+    <!-- <h1> through <h6> are for creating headings in the <body> -->
+    <head>
+        <title>Chapter for Headings</title>
+    </head>
+    <body>
+        <h1>Heading One</h1>
+        <h2>Heading Two</h2>
+        <h3>Heading Three</h3>
+        <h4>Heading Four</h4>
+        <h5>Heading Five</h5>
+        <h6>Heading Six</h6>
+
+        <!-- PARAGRAPHS -->
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum odit
+            <strong>error ea libero</strong>quaerat doloremque ducimus amet blanditiis eaque,
+            dolore obcaecati. Asperiores inventore fuga pariatur, ipsam illum
+            dolores delectus ex.
+        </p>
+        <!-- <em> = italics -->
+        <!-- <strong> = bold-->
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Magni <em>vitae facilis</em> inventore eveniet, dignissimos quasi
+            id iste dolores quaerat voluptatibus culpa itaque animi sapiente
+            dolorem repudiandae soluta quia ipsa. Consequatur?
+        </p>
+        <p>
+        <!-- LINKS-->
+
+        <!-- <a> = creating links -->
+        <!--'href' is an attribute that takes the https of the link you wanna go to-->
+        <!-- 'target="_blank"' is an attribute that lets the link open on another tab-->
+        <a href= "http://google.com" target="_blank">Link 1</a>
+        </p>
+
+        <!-- LISTS -->
+
+        <!-- <ul> = unordered list-->
+        <!-- <ol> = ordered list -->
+        <ul>
+            <li>List Item 1</li>
+            <li>List Item 2</li>
+            <li>List Item 3</li>
+            <li>List Item 4</li>
+        </ul>
+        <ol>
+            <li>List Item 1</li>
+            <li>List Item 2</li>
+            <li>List Item 3</li>
+            <li>List Item 4</li>
+        </ol>
+
+        <!-- TABLES -->
+
+        <!-- <table> = For creating tables -->
+        <!-- <thead> = For creating table headings -->
+        <!-- <tr> = For creating table rows -->
+        <!-- <th> = Headings for to fill up the <tr> -->
+        <!-- <tbody> = For creating the body of the table-->
+        <!-- <td> = for fillind the table body with data-->
+        <!-- REMEMBER NOT TO USE <th> in the <tbody>... <th> adds some padding and bolding-->
+        <!-- THE # OF <tr> YOU USE DETERMINES HOW MANY ROWS YOU GET-->
+        <!-- THEY FILL UP FROM SIDE TO SIDE SO BECAREFUL WHEN FILLING WITH <td> and <th>-->
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Age</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Caedan McAffee</td>
+                    <td>caedan@gmail.com</td>
+                    <td>25</td>
+                </tr>
+                <tr>
+                    <td>Em McDonald</td>
+                    <td>Emdonald@outlook.com</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td>James Kuhlor</td>
+                    <td>jamesselikem1@gmail.com</td>
+                    <td>19</td>
+                </tr>
+                <tr>
+                    <td>Demian Tetteh</td>
+                    <td>demiantetteh@gmail.com</td>
+                    <td>20</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <br> <!-- <br> = line break-->
+        <hr> <!-- <hr> = horizontal rule or line in the browser-->
+        <br>
+
+        <!-- FORMS -->
+
+        <!-- <form> = creates a form -->
+        <!-- 'action' = an attribute that submits the form to a page or server -->
+        <!-- 'method = "POST"' is something you'll see in forms,
+                        they mean that we're making a post request
+                        to the server and posts are used to do things
+                        like add data to a a database and it's safer than 'GET'
+                        'GET' lets the data filled in be seen in the url -->
+
+            
+        <!-- <label> = is just the name of the particular formdata you're gonna fill-->
+        <!--<input> = is what allows the user to input some data -->
+        <!-- 'type' is the type of data. IN THIS CASE IT'S 'text'-->
+        <!-- 'name' has to do with server side programming....-->
+
+
+        <form action="process.php" method="POST">
+            <div> <!-- This is for sectioning it also produces line breaks-->
+                <!-- 'placeholder' allows you to put greyed out instructions into the form box-->
+                <label>First Name</label>
+                <input type="text" name="first-name" placeholder="Enter your first name">
+            </div>
+                <br>
+            <div>
+            <label>Last Name</label>
+            <input type="text" name="last-name">
+            </div>
+                <br>
+            <div>
+                <label>Email</label>
+                <input type="email" name="email">
+            </div>
+                <br>
+            <div>
+                <!-- <textarea> = creates a bigger box for text input,
+                                  the box is resizable-->
+                <label>Message</label>
+                <textarea name="message"></textarea>
+            </div>
+                <br>
+            <!-- <select> = allows you to select between options-->
+            <!-- <option> = gives the options-->
+            <div>
+                <label>Gender</label>
+                <select name="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+                <br>
+            <div>
+                <label>Age:</label>
+                <!-- This time our type is a "number"-->
+                <!-- 'value' is our predefined value to our input-->
+                <input type="number" name="age" value="18">
+            </div>
+                <br>
+            <div>
+                <label>Birthday:</label>
+                <!-- 'date' allows you to set a date using a calender-->
+                <input type="date" name="'birthday">
+            </div>
+                <br>
+            <input type="submit" name="submit" value="Submit">
+            <!-- value is the actual name of the form-->
+            
+        </form>
+
+
+
+
+        <div style="margin-top:500px"></div>
+    </body>
+</html>
