@@ -1,0 +1,124 @@
+import java.util.Scanner;
+
+public class ProjectPart2
+{
+   public static void main(String[] args)
+   {
+      //Create a Scanner object for keyboard input
+      Scanner keyboard = new Scanner(System.in);
+      
+      String processorType;               //the type of processor
+      String title = "Computer Hardware Recommendation Tool";     //the title of the program
+      String monitorResolution = " ";       //monitor resolution based on the user's input
+      double cpu;                         //the clock speed of the graphics card in MHZ
+      double gpu;                         //the clock speed of the processor in MHZ
+      int numCores;                       //number of cores of the processor
+      char overclockFriendly = ' ';    //is the hardware overclock-friendly, yes or no
+      double performanceScore;         //performace score of the recommended graphics quality
+      double multiplier = 0;           //assign a multiper holder
+      int choice = 0;                  //holds the user menu choice
+      
+      //constants
+      final String OPTION_ONE_RESOLUTION = "1280 x 720";    //first option resolution
+      final String OPTION_TWO_RESOLUTION = "1920 x 1080";   //second option resolution
+      final String OPTION_THREE_RESOLUTION = "2560 x 1440"; //third option resolution
+      final String OPTION_FOUR_RESOLUTION = "3840 x 2160";    //fourth option resolution
+      
+      final double OPTION_ONE_MULTIPLIER = 1;   //option one multiper
+      final double OPTION_TWO_MULTIPLIER = .75;    //option two mulitplier
+      final double OPTION_THREE_MULTIPLIER = .55;     //option three multiplier
+      final double OPTION_FOUR_MULTIPLIER = .35;    //option four multiplier
+      
+      
+      
+      System.out.println(title);  //prints out the String object title of the program
+      System.out.print("Please enter the type of your processor: ");
+      processorType = keyboard.nextLine();      //reads the user input and stores it into a string
+      
+      System.out.print("Please enter the clock speed (in MegaHertz) of your graphics card: ");
+      cpu = keyboard.nextDouble();     //reads the user input and stores it into a double
+      
+      System.out.print("Please enter the clock speed (in MegaHertz) of your processor: ");
+      gpu = keyboard.nextDouble();
+      
+      System.out.print("Please enter the number of cores of your processor: ");
+      numCores = keyboard.nextInt();    //reads the user input and stores it into an integer
+      
+      //Display the menu
+      System.out.println("1. " + OPTION_ONE_RESOLUTION);
+      System.out.println("2. " + OPTION_TWO_RESOLUTION);
+      System.out.println("3. " + OPTION_THREE_RESOLUTION);
+      System.out.println("4. " + OPTION_FOUR_RESOLUTION);
+      
+      //Gets user input from menu choice
+      System.out.print("Please enter a choice from the menu selection. Select 1, 2, 3, or 4: ");
+      choice = keyboard.nextInt();
+      
+      //uses if-else-if statement to test and assign a multiplier to each resolution
+      if (choice == 1)
+      {  
+         multiplier = OPTION_ONE_MULTIPLIER;
+         monitorResolution = OPTION_ONE_RESOLUTION;
+      }
+      else if (choice == 2)
+      {
+         multiplier = OPTION_TWO_MULTIPLIER;
+         monitorResolution = OPTION_TWO_RESOLUTION;
+      }
+      else if (choice == 3)
+      {
+         multiplier = OPTION_THREE_MULTIPLIER;
+         monitorResolution = OPTION_THREE_RESOLUTION;
+      }
+      else if (choice == 4)
+      {
+         multiplier = OPTION_FOUR_MULTIPLIER;
+         monitorResolution = OPTION_FOUR_RESOLUTION;
+      }
+      else
+      {
+         //if user enters a number other than number given, will be prompt to enter a valid number
+         System.out.println("Please enter a valid number: 1, 2, 3, or 4. ");
+      }
+      
+      //calculates the performaceScore 
+      performanceScore = ((5 * gpu) + (numCores * cpu)) * multiplier;
+      
+      //checks to see if performanceScore is greater than 17000 = Ultra, between, or less than 11000 = unable to play
+      if (performanceScore > 17000)
+      {
+         //Displays the recommended graphics quality the hardware support
+         System.out.println("Recommended Graphics Quality: Ultra ");
+      }
+      else if (performanceScore > 15000 && performanceScore <= 17000)
+      {
+         System.out.println("Recommended Graphics Quality: High ");
+      }
+      else if (performanceScore > 13000 && performanceScore <= 15000)
+      {
+         System.out.println("Recommended Graphics Quality: Medium ");
+      }
+      else if (performanceScore > 11000 && performanceScore <= 13000)
+      {
+         System.out.println("Recommended Graphics Quality: Low ");
+      }
+      else 
+      {
+         System.out.println("Recommended Graphics: Unable to Play ");
+      }
+      //prints out the total calculation of the performance score
+      System.out.printf("A GPU with a clock speed of " + gpu + "MHZ, a " + numCores + "-core CPU with a clock speed of " + cpu +
+      "MHZ, and a\n" + monitorResolution + " would have a Performance Score calculation of: %,.3f\n", performanceScore);
+      
+      keyboard.nextLine();  //ignores and buffers, skipping to the next line
+      
+      System.out.println("Is your hardware overclock-friendly? (Y=yes, N=no): ");
+      overclockFriendly = keyboard.nextLine().charAt(0);    //taking first character from input in string
+      
+      if (overclockFriendly == 'n'|| overclockFriendly == 'N')
+      {
+         System.out.println("Warning, your cooling system may work harder. Consider upgrading to overclock-friendly components.");
+      }
+   }
+}
+      
