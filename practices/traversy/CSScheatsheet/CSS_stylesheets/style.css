@@ -1,0 +1,15 @@
+body{
+    background-color: burlywood;
+    color: black;
+
+    font-family: Arial, Helvetica, sans-serif;
+    
+    font-size: 17px;
+    font-weight: normal;
+
+    /*Same as above, kinda like some shortcut*/
+    /*font: normal 18px Arial, Helvetica, sans-serif*/
+
+
+
+}
