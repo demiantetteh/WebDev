@@ -10,6 +10,16 @@ body{
     /*Same as above, kinda like some shortcut*/
     /*font: normal 18px Arial, Helvetica, sans-serif*/
 
+    line-height: 1.6em;
+    margin: 0;
 
+    .container{
+        width: 90%;
+        margin: auto;
+    }
 
+    .box-1{
+        background-color: #333;
+        color:#fff;
+    }
 }
